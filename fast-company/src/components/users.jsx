@@ -11,7 +11,7 @@ const Users = () => {
     setUsers(newUsers) 
   }
   const renderPhrase =(number)=>{
-
+    return  number>0?(number===2||number===3||number===4)?`${number} человекa тусанет стобой сегодня`:`${number} человек тусанет стобой сегодня`:'никого нет'
   }
 
     // tedious: { _id: "67rdca3eeb7f6fgeed471198", name: "Нудила", color: "primary" },
@@ -50,7 +50,7 @@ const Users = () => {
     return (
         <React.Fragment>
         <h2><Badge bg={users.length>0?"primary":"danger"}>
-            {users.length>0?users.length +' человек тусанет стобой сегодня':'никого нет'} 
+           {renderPhrase(users.length)}
             </Badge></h2>
             <Table striped bordered hover style={{display:(users.length===0)?"none":"show"}}>
                 <thead>
